@@ -1,4 +1,4 @@
-# /currency.erb
+<!--/currency.erb-->
 
 <!DOCTYPE html>
 <html>
@@ -9,16 +9,20 @@
   </head>
 
   <body>
-    <h1>Convert BAM</h1>
+    <h1>Convert <%= @original_currency %></h1>
 
 <p>Go <a href="/">back</a>.</p>
 
+
+
 <ul>
+  <% @currencies.each do |x, y| %>
     <li>
-      <a href="/BAM/AED">
-        Convert 1 BAM to AED...
+      <a href="/<%= @original_currency %>/<%= x %>">
+        Convert 1 <%= @original_currency %> to <%= x %>...
       </a>
     </li>
+  <% end %>   
 </ul>
 
   </body>
